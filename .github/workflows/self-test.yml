@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  test-self:
+    runs-on: ubuntu-latest
+    name: Self test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Self
+        uses: ./
+        id: self
+        with:
+          latest: true

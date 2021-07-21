@@ -1,0 +1,12 @@
+name: 'Update poetry dependencies'
+description: 'Update the poetry lock file, and optionally pyproject.toml'
+inputs:
+  latest:
+    description: 'Should the version constraints be updated'
+    required: false
+    default: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.latest }}
