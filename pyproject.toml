@@ -19,3 +19,6 @@ use-dir = "^0.1.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+
+[tool.poetry.scripts]
+upd = 'update_poetry_dependencies.main:cli'

@@ -10,4 +10,4 @@ RUN poetry install
 COPY update_poetry_dependencies ./update_poetry_dependencies/
 RUN poetry install
 
-ENTRYPOINT ["poetry", "run", "python", "update_poetry_dependencies/main.py"]
+ENTRYPOINT ["poetry", "run", "upd"]
