@@ -9,5 +9,6 @@ RUN poetry install
 # and the project doesn't invalidate it
 COPY update_poetry_dependencies ./update_poetry_dependencies/
 RUN poetry install
+RUN pip install .
 
 ENTRYPOINT ["upd"]
