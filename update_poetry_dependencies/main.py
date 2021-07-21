@@ -41,7 +41,7 @@ def cli():
     # Shell script argument passing conventions upset me
     wants_latest = sys.argv[-1] == "true"
 
-    subprocess.run("poetry update")
+    subprocess.run(shlex.split("poetry update"))
 
     if wants_latest:
         with open("pyproject.toml") as f:
@@ -50,5 +50,5 @@ def cli():
         dependencies = pyproject["tool"]["poetry"]["dependencies"]
         dev_dependencies = pyproject["tool"]["poetry"]["dev_dependencies"]
 
-        subprocess.run(f"poetry add {dep_str(dependencies)}")
-        subprocess.run(f"poetry add --dev {dep_str(dev_dependencies)}")
+        subprocess.run(shlex.split(f"poetry add {dep_str(dependencies)}"))
+        subprocess.run(shlex.split(f"poetry add --dev {dep_str(dev_dependencies)}"))
