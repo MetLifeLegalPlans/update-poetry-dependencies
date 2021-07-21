@@ -48,7 +48,7 @@ def cli():
             pyproject = toml.load(f)
 
         dependencies = pyproject["tool"]["poetry"]["dependencies"]
-        dev_dependencies = pyproject["tool"]["poetry"]["dev_dependencies"]
+        dev_dependencies = pyproject["tool"]["poetry"]["dev-dependencies"]
 
         subprocess.run(shlex.split(f"poetry add {dep_str(dependencies)}"))
         subprocess.run(shlex.split(f"poetry add --dev {dep_str(dev_dependencies)}"))
