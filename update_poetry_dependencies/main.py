@@ -1,10 +1,11 @@
 import os
 import sys
-import toml
+import glob
 
 
 def cli():
     ws_env = os.environ.get("GITHUB_WORKSPACE")
+    print(glob.glob("*"))
     os.chdir(ws_env)
 
     # Shell script argument passing conventions upset me
