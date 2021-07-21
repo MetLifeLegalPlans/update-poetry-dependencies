@@ -5,6 +5,7 @@ import glob
 
 def cli():
     ws_env = os.environ.get("GITHUB_WORKSPACE")
+    print(os.getcwd())
     print(glob.glob("*"))
     os.chdir(ws_env)
 
